@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: ItalicsVariable-Font;
+    src: url(/fonts/RedHatText-Italic-VariableFont_wght.ttf);
+    font-family: Variable-Font;
+    src: url(../public//fonts//RedHatText-VariableFont_wght.ttf);
+    font-family: RedText-Bold;
+    src: url(../public/fonts/static/RedHatText-Bold.ttf);
+    font-family: RedText-Regular;
+    src: url(../public/fonts/static/RedHatText-Regular.ttf);
+    font-family: RedText-Semibold;
+    src: url(../public/fonts/static/RedHatText-SemiBold.ttf);
+}
+
+
+.fontOne {
+    font-family: ItalicsVariable-Font;
+}
+
+.fontTwo {
+    font-family: Variable-Font;
+}
+
+.fontTree {
+    font-family: RedText-Bold;
+}
+
+.fontFour {
+    font-family: RedText-Regular;
+}
+
+.fontFive {
+    font-family: RedText-Semibold;
+}
