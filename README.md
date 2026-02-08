@@ -1,16 +1,14 @@
-# React + Vite
+# React-independent-state-logic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A deep dive into React state management focusing on item isolation within mapped containers.
 
-Currently, two official plugins are available:
+# The Challenge 
+Initially, I had my toggle state in the parent list. Because I was mapping over data, every item was listening to the exact same boolean variable. When I clicked 'Add to Cart' on a Waffle, the Crème Brûlée also thought it was clicked because they shared one single switch.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## The Solution
 
-## React Compiler
+I learned to create a Child Component. By moving the useState and card UI inside that component, React creates a fresh, private state instance for every single item it renders. Now, each card acts independently.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Description:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A deep dive into React state management focusing on item isolation within mapped containers. This project demonstrates how to refactor a single global state into independent child components. By encapsulating logic within a ProductCard component, each item in the dessert list maintains its own 'Add to Cart' toggle and UI state without affecting its neighbors. This solves the common issue where clicking one button triggers a state change across an entire mapped array.
